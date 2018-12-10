@@ -1,0 +1,109 @@
+
+/************** Header **************/
+#logo {
+    text-align: center;
+}
+#logo img {
+    width: 50%;
+}
+/*************** GENERAL *************/
+h1, h2, h3 {
+	clear: both;
+}
+
+h2 {
+	font-size: 2vw;
+}
+
+/*************** SECTIONS ************/
+.section {
+	width: 100%;
+	clear: both;
+	text-align: center;
+	display: inline-block;
+}
+#show_info_container {
+	text-align: center;
+}
+#show_info_container div {
+	display: inline-block;
+        width: 35%;
+}
+#quantity_container {
+    display: inline-block;
+}	
+#box_container {
+    display: inline-block;
+    width: 100%;
+    margin: 1.5%
+}
+/**************** FORM *************/
+.box_border {
+	border: 1px solid black;
+	width: 95%;
+        /*width: 16%;*/
+	float: none;
+        margin: auto;
+}
+.form_label {
+	background-color: #FDF108;
+	width: 20%;
+	height: 90px;
+}
+.form_male {
+	background-color: #ADA1FF;
+	width: 40%;
+	height: 90px;
+}
+.form_female {
+	background-color: #FFA1AD;
+	width: 40%;
+	height: 90px;
+}
+.form_label_head {
+	background-color: #FDF108;
+	width: 150px;
+	height: 30px;
+}
+#submit {
+	text-align: center;
+	padding:10px;
+}
+.hideTillSubmit {
+	display: none;
+}
+.hideAfterSubmit {
+	display: anything;
+}
+
+input {
+	font-size: 60px;
+	text-align: center;
+}
+
+@media screen and (max-width:300px) {
+    input {
+        font-size: 20px;
+    }
+}
+#LocBox, #DateBox, #VenueDinero {
+        font-size:20px;
+        text-align:center;
+        width: 100%;
+        height: 7vw;
+}
+/*placeholder styles*/
+::-webkit-input-placeholder {color: #fff;}
+:-moz-placeholder { /* Firefox 18- */color: #fff;  }
+::-moz-placeholder {  /* Firefox 19+ */color: #fff;  }
+:-ms-input-placeholder {  color: #fff;  }        
+
+[type="text"]::-webkit-input-placeholder {color: #aaa;}
+[type="text"]:-moz-placeholder { /* Firefox 18- */color: #aaa;  }
+[type="text"]::-moz-placeholder {  /* Firefox 19+ */color: #aaa;  }
+[type="text"]:-ms-input-placeholder {  color: #aaa;  } 
+
+[type="date"]::-webkit-input-value {color: #aaa; }
+[type="date"]:-moz-value {color: #aaa; }
+[type="date"]::-moz-value {color: #aaa; }
+[type="date"]:-ms-input-value {  color: #aaa;  } 
