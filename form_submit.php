@@ -15,10 +15,7 @@
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
         }
-
-        // $link = mysqli_connect($host, $username, $password,$dbname);
-        // mysqli_select_db($dbname, $link) or die(mysqli_error());
-
+        
     //Venue
         $venue_payout = $_POST['venue-payout'];
         if(!isZero($venue_payout)){
@@ -68,31 +65,31 @@
         
         var_dump($sql);
 
-        if ($conn->query($sql) === TRUE) {
-            mysqli_query($conn,$sql);
-            echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
-        } else {
-            echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
+        // if ($conn->query($sql) === TRUE) {
+        //     mysqli_query($conn,$sql);
+        //     echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
+        // } else {
+        //     echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
+        // }
+
+        if ($conn->multi_query($sql)) {
+            do {
+                /* store first result set */
+                if ($result = $conn->store_result()) {
+                    while ($row = $result->fetch_row()) {
+                        printf("%s\n", $row[0]);
+                    }
+                    $result->free();
+                }
+                /* print divider */
+                if ($conn->more_results()) {
+                    printf("-----------------\n");
+                }
+            } while ($conn->next_result());
         }
 
         $conn->close();
 
-    // //Czech for errors
-    //     if(!$err) {
-    //         echo "All is right! No errors!";
-    //     }
-    //     else{
-    //         echo "oh boy. there were/was ".$err." problem(s)";
-    //     }
-
-// function check_query($sql){
-//     if (!mysqli_query($sql)){
-//         die("Oh boy... =/".mysqli_error());
-//         $err = True;
-//     } else{
-//         echo nl2br($sql. " ran successfully!\n\n");
-//     }
-// }
 function isZero($val){
     return $val == 0 || empty($val);
 }
