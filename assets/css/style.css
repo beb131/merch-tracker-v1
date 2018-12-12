@@ -7,7 +7,8 @@ body {
     text-align: center;
 }
 #logo img {
-	max-width:300px;
+    max-width: 250px;
+    padding: 30px;
 }
 /*************** GENERAL *************/
 h1, h2, h3 {
@@ -98,17 +99,17 @@ input {
         height: 7vw;
 }
 /*placeholder styles*/
-::-webkit-input-placeholder {color: #aaa;}
-:-moz-placeholder { /* Firefox 18- */color: #aaa;  }
-::-moz-placeholder {  /* Firefox 19+ */color: #aaa;  }
-:-ms-input-placeholder {  color: #aaa;  }        
+::-webkit-input-placeholder {color: #333;}
+:-moz-placeholder { /* Firefox 18- */color: #333;  }
+::-moz-placeholder {  /* Firefox 19+ */color: #333;  }
+:-ms-input-placeholder {  color: #333;  }        
 
-[type="text"]::-webkit-input-placeholder {color: #aaa;}
-[type="text"]:-moz-placeholder { /* Firefox 18- */color: #aaa;  }
-[type="text"]::-moz-placeholder {  /* Firefox 19+ */color: #aaa;  }
-[type="text"]:-ms-input-placeholder {  color: #aaa;  } 
+[type="text"]::-webkit-input-placeholder {color: #333;}
+[type="text"]:-moz-placeholder { /* Firefox 18- */color: #333;  }
+[type="text"]::-moz-placeholder {  /* Firefox 19+ */color: #333;  }
+[type="text"]:-ms-input-placeholder {  color: #333;  } 
 
-[type="date"]::-webkit-input-value {color: #aaa; }
-[type="date"]:-moz-value {color: #aaa; }
-[type="date"]::-moz-value {color: #aaa; }
-[type="date"]:-ms-input-value {  color: #aaa;  } 
+[type="date"]::-webkit-input-value {color: #333; }
+[type="date"]:-moz-value {color: #333; }
+[type="date"]::-moz-value {color: #333; }
+[type="date"]:-ms-input-value {  color: #333;  } 
