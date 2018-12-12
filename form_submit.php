@@ -10,11 +10,14 @@
         $show_date = $_POST['show-date']; 
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
 	    $sql = "";
-        $conn = mysqli_connect($host,$username,$password,$dbname);
-        if (!$conn){die('Could not connect: ' . mysqli_error());}
+        $conn = new mysqli($servername, $username, $password, $dbname);
+        // Check connection
+        if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+        }
 
-        $link = mysqli_connect($host, $username, $password,$dbname);
-        mysqli_select_db($dbname, $link) or die(mysqli_error());
+        // $link = mysqli_connect($host, $username, $password,$dbname);
+        // mysqli_select_db($dbname, $link) or die(mysqli_error());
 
     //Venue
         $venue_payout = $_POST['venue-payout'];
