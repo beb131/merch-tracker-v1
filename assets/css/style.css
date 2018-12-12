@@ -86,7 +86,7 @@ input {
         font-size: 20px;
     }
 }
-#loc-input, #DateBox, #venue-payout {
+#loc-input, #date-input, #venue-payout {
         font-size:20px;
         text-align:center;
         width: 100%;
