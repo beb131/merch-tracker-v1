@@ -52,8 +52,6 @@
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
             }
         }
-        
-        var_dump($sql);
 
         $result = mysqli_multi_query($conn, $sql);
 
