@@ -20,7 +20,6 @@
         if(!isZero($venue_payout)){
             $sql .= "INSERT INTO venue (Earn, Location, Date) VALUES ('".$venue_payout."', '".$location."', '".$show_date."');";
         }
-
     //Outrun the Sun  
         $ots_earn = $_POST['ots_earn'];
         $ots_quantity = $_POST['ots-quantity'];
@@ -30,10 +29,8 @@
     //Thursday Night Burrito Fight
         $tnbf_earn = $_POST['tnbf-earn'];
         $tnbf_quantity = $_POST['tnbf-quantity'];
-        if(!isZero(tnbf_quantity)){
+        if(!isZero($tnbf_quantity)){
             $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."');";
-        } else {
-            echo "TEST";
         }
     //Posters
         $poster_earn = $_POST['poster-earn'];
