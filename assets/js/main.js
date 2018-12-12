@@ -3,7 +3,6 @@ document.getElementById("DateBox").value = today;
 
 function incQuantity(clickID, merchType) {
   const priceInput = document.getElementById(clickID + "-earn");
-  console.log(priceInput);
   let price = parseInt(priceInput.value, 10);
   const numInput = document.getElementById(clickID + "-quantity");
   let num = parseInt(numInput.value, 10);
