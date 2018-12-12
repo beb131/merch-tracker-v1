@@ -70,24 +70,26 @@
             echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
 
-    //Czech for errors
-        if(!$err) {
-            echo "All is right! No errors!";
-        }
-        else{
-            echo "oh boy. there were/was ".$err." problem(s)";
-        }
+        $conn->close();
 
-    function check_query($sql){
-        if (!mysqli_query($sql)){
-            die("Oh boy... =/".mysqli_error());
-            $err = True;
-        } else{
-            echo nl2br($sql. " ran successfully!\n\n");
-        }
+    // //Czech for errors
+    //     if(!$err) {
+    //         echo "All is right! No errors!";
+    //     }
+    //     else{
+    //         echo "oh boy. there were/was ".$err." problem(s)";
+    //     }
+
+function check_query($sql){
+    if (!mysqli_query($sql)){
+        die("Oh boy... =/".mysqli_error());
+        $err = True;
+    } else{
+        echo nl2br($sql. " ran successfully!\n\n");
     }
-    function isZero($val){
-        return $val == 0 || empty($val);
-    }
+}
+function isZero($val){
+    return $val == 0 || empty($val);
+}
     
 ?>
