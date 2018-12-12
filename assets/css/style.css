@@ -77,6 +77,10 @@ h2 {
 	display: block;
 }
 
+button {
+	font-size:60px;
+}
+
 input {
 	font-size: 60px;
 	text-align: center;
