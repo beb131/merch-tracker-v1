@@ -4,7 +4,6 @@
         $username = "schwam_merchUser";
         $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
-        // $err = False;
 
         $location = $_POST['location'];
         $show_date = $_POST['show-date']; 
@@ -20,7 +19,6 @@
         $venue_payout = $_POST['venue-payout'];
         if(!isZero($venue_payout)){
             $sql .= "INSERT INTO venue (Earn, Location, Date) VALUES ('".$venue_payout."', '".$location."', '".$show_date."');";
-            //check_query($sql);
         }
 
     //Outrun the Sun  
@@ -28,21 +26,18 @@
         $ots_quantity = $_POST['ots-quantity'];
         if(!isZero($ots_quantity)){
             $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."');";
-            //check_query($sql);
         }
     //Thursday Night Burrito Fight
         $tnbf_earn = $_POST['tnbf-earn'];
         $tnbf_quantity = $_POST['tnbf-quantity'];
         if(!isZero(tnbf_quantity)){
             $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."');";
-            //check_query($sql);
         }
     //Posters
         $poster_earn = $_POST['poster-earn'];
         $poster_quantity = $_POST['poster-quantity'];
         if(!isZero($poster_quantity)){
             $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."');";
-            //check_query($sql);
         }
     //TSHIRTS
         foreach($shirt_sizes as $currSize){
@@ -53,25 +48,14 @@
 
             if(!isZero($shirt_female_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                //check_query($sql);
             }
             if(!isZero($shirt_male_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                //check_query($sql);
             }
         }
         
-        var_dump($conn);
-        
         var_dump($sql);
-
-        // if ($conn->query($sql) === TRUE) {
-        //     mysqli_query($conn,$sql);
-        //     echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
-        // } else {
-        //     echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
-        // }
-
+        
         $result = mysqli_multi_query($conn, $sql);
 
         if ($result) {
