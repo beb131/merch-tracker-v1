@@ -38,6 +38,18 @@
         if(!isZero($poster_quantity)){
             $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."');";
         }
+    //Hats
+        $hat_earn = $_POST['hat-earn'];
+        $hat_quantity = $_POST['hat-quantity'];
+        if(!isZero($hat_quantity)){
+            $sql .= "INSERT INTO hats (Quantity, Earn, Location, Date) VALUES ('".$hat_quantity."', '".$hat_earn."', '".$location."', '".$show_date."');";
+        }
+    //Beanies
+        $beanie_earn = $_POST['beanie-earn'];
+        $beanie_quantity = $_POST['beanie-quantity'];
+        if(!isZero($beanie_quantity)){
+            $sql .= "INSERT INTO beanies (Quantity, Earn, Location, Date) VALUES ('".$beanie_quantity."', '".$beanie_earn."', '".$location."', '".$show_date."');";
+        }        
     //UNDYED TSHIRTS
         foreach($shirt_sizes as $currSize){
             $shirt_male_earn = $_POST[$currSize.'M-earn'];
@@ -60,10 +72,10 @@
             $dyed_shirt_male_quantity = $_POST['dyed-'.$currSize.'M-quantity'];
 
             if(!isZero($dyed_shirt_female_quantity)){
-                $sql .= "INSERT INTO dyed_tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_female_quantity."', '".$dyed_shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
+                $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_female_quantity."', '".$dyed_shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
             }
             if(!isZero($dyed_shirt_male_quantity)){
-                $sql .= "INSERT INTO dyed_tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_male_quantity."', '".$dyed_shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
+                $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_male_quantity."', '".$dyed_shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
             }
         }
     $result = mysqli_multi_query($conn, $sql);

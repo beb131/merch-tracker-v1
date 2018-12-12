@@ -42,7 +42,7 @@
     <!--________________________________-->
     <!--____________POSTERS_____________-->
     <!--________________________________-->
-        <div id="poster_info_container" class="section">
+    <div id="poster_info_container" class="section">
             <h1> Posters!</h1>
             <p>
                 <input id="poster" type="button" value="-1" onclick="decQuantity(this.id, 'Poster')" class="button1">
@@ -51,9 +51,32 @@
                 <input id="poster" type="button" value="+1" onclick="incQuantity(this.id, 'Poster')" class="button1">
         </div>
     <hr>
-
     <!--________________________________-->
-    <!--___________TSHIRTS______________-->
+    <!--____________HATS_____________-->
+    <!--________________________________-->
+    <div id="poster_info_container" class="section">
+            <h1> Hats!</h1>
+            <p>
+                <input id="hat" type="button" value="-1" onclick="decQuantity(this.id, 'Hat')" class="button1">
+                <input id="hat-quantity"   class="form_label" type="number" name="hat-quantity">
+                <input id="hat-earn" class="form_label" placeholder="$$$" type="number" name="hat-earn">
+                <input id="hat" type="button" value="+1" onclick="incQuantity(this.id, 'Hat')" class="button1">
+        </div>
+    <hr>
+    <!--________________________________-->
+    <!--____________BEANIES_____________-->
+    <!--________________________________-->
+    <div id="beanie_info_container" class="section">
+            <h1> Beanies!</h1>
+            <p>
+                <input id="beanie" type="button" value="-1" onclick="decQuantity(this.id, 'Beanie')" class="button1">
+                <input id="beanie-quantity"   class="form_label" type="number" name="beanie-quantity">
+                <input id="beanie-earn" class="form_label" placeholder="$$$" type="number" name="beanie-earn">
+                <input id="beanie" type="button" value="+1" onclick="incQuantity(this.id, 'Beanie')" class="button1">
+        </div>
+    <hr>   
+    <!--________________________________-->
+    <!--___________UNDYED TSHIRTS_______-->
     <!--________________________________-->
         <div id="quantity_container" class="section">
             <h1>UnDyed Shirts</h1>
@@ -132,6 +155,10 @@
                 </div>
             </div>
         </div> <!--/section-->
+        <hr>
+    <!--________________________________-->
+    <!--___________DYED TSHIRTS_________-->
+    <!--________________________________-->        
         <div id="dyedquantity_container" class="section">
             <h1>Dyed Shirts</h1>
             <div id="dyedbox_container">
