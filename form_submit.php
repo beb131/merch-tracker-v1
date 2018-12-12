@@ -4,7 +4,7 @@
         $username = "schwam_merchUser";
         $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
-        $err = False;
+        // $err = False;
 
         $location = $_POST['location'];
         $show_date = $_POST['show-date']; 
@@ -74,7 +74,7 @@
         } else {
             echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
-        
+
         $conn->close();
 
     // //Czech for errors
