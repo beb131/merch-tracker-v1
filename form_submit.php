@@ -75,6 +75,7 @@
         if ($conn->multi_query($sql)) {
             do {
                 /* store first result set */
+                var_dump($result);
                 if ($result = $conn->store_result()) {
                     while ($row = $result->fetch_row()) {
                         printf("%s\n", $row[0]);
