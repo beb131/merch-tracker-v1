@@ -10,7 +10,7 @@
         $show_date = $_POST['show-date']; 
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
 	    $sql = "";
-        $con = mysqli_connect($host,$username,$password,$dbname);
+        $conn = mysqli_connect($host,$username,$password,$dbname);
         if (!$con){die('Could not connect: ' . mysqli_error());}
 
         $link = mysqli_connect($host, $username, $password,$dbname);
@@ -59,6 +59,12 @@
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtMALEQuantity."', '".$shirtMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'M')";
                 check_query($sql);
             }
+        }
+        
+        if ($conn->query($sql) === TRUE) {
+            echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
+        } else {
+            echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
         
     //Czech for errors
