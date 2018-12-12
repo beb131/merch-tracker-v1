@@ -1,6 +1,6 @@
 <?php
     //META variables
-        $host = "localhost";
+        $host = "localhost:3306";
         $username = "schwam_merchUser";
         $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
