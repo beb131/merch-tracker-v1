@@ -11,7 +11,7 @@
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
 	    $sql = "";
         $conn = mysqli_connect($host,$username,$password,$dbname);
-        if (!$con){die('Could not connect: ' . mysqli_error());}
+        if (!$conn){die('Could not connect: ' . mysqli_error());}
 
         $link = mysqli_connect($host, $username, $password,$dbname);
         mysqli_select_db($dbname, $link) or die(mysqli_error());
@@ -66,7 +66,7 @@
         } else {
             echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
-        
+
     //Czech for errors
         if(!$err) {
             echo "All is right! No errors!";
