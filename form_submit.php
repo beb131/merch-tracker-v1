@@ -38,7 +38,7 @@
         if(!isZero($poster_quantity)){
             $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."');";
         }
-    //TSHIRTS
+    //UNDYED TSHIRTS
         foreach($shirt_sizes as $currSize){
             $shirt_male_earn = $_POST[$currSize.'M-earn'];
             $shirt_female_earn = $_POST[$currSize.'F-earn'];
@@ -52,21 +52,34 @@
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
             }
         }
+    //DYED TSHIRTS
+        foreach($shirt_sizes as $currSize){
+            $dyed_shirt_male_earn = $_POST['dyed-'.$currSize.'M-earn'];
+            $dyed_shirt_female_earn = $_POST['dyed-'.$currSize.'F-earn'];
+            $dyed_shirt_female_quantity = $_POST['dyed-'.$currSize.'F-quantity'];
+            $dyed_shirt_male_quantity = $_POST['dyed-'.$currSize.'M-quantity'];
 
-        $result = mysqli_multi_query($conn, $sql);
-
-        if ($result) {
-            do {
-                // grab the result of the next query
-                if (($result = mysqli_store_result($conn)) === false && mysqli_error($conn) != '') {
-                    echo "Query failed: " . mysqli_error($conn);
-                }
-            } while (mysqli_more_results($conn) && mysqli_next_result($conn)); // while there are more results
-        } else {
-            echo "First query failed..." . mysqli_error($conn);
+            if(!isZero($dyed_shirt_female_quantity)){
+                $sql .= "INSERT INTO dyed_tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_female_quantity."', '".$dyed_shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
+            }
+            if(!isZero($dyed_shirt_male_quantity)){
+                $sql .= "INSERT INTO dyed_tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_male_quantity."', '".$dyed_shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
+            }
         }
+    $result = mysqli_multi_query($conn, $sql);
 
-        $conn->close();
+    if ($result) {
+        do {
+            // grab the result of the next query
+            if (($result = mysqli_store_result($conn)) === false && mysqli_error($conn) != '') {
+                echo "Query failed: " . mysqli_error($conn);
+            }
+        } while (mysqli_more_results($conn) && mysqli_next_result($conn)); // while there are more results
+    } else {
+        echo "First query failed..." . mysqli_error($conn);
+    }
+
+    $conn->close();
 
 function isZero($val){
     return $val == 0 || empty($val);
