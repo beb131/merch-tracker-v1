@@ -1,63 +1,63 @@
-<h1>TEST</h1>
 <?php
     //META variables
-        $servername = "localhost";
+        $host = "localhost";
         $username = "schwam_merchUser";
-        $password = "9mR*dU?KNK8Q"; 
+        $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
         $err = False;
 
-        $Location = $_POST['Location'];
-        $Selling_Date = $_POST['Selling_Date']; 
-        $shirtSizes = array("XS", "S", "M", "L", "XL", "XXL");
-	$sql = "";
-        $con = mysqli_connect($servername,$username,$password,$dbname);
+        $location = $_POST['location'];
+        $show_date = $_POST['show-date']; 
+        $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
+	    $sql = "";
+        $con = mysqli_connect($host,$username,$password,$dbname);
         if (!$con){die('Could not connect: ' . mysqli_error());}
 
-        $link = mysqli_connect($servername, $username, $password,$dbname);
+        $link = mysqli_connect($host, $username, $password,$dbname);
         mysqli_select_db($dbname, $link) or die(mysqli_error());
 
-    //Venue (if not paid then = 0)
-        $VenueEarn = $_POST['VenueDinero'];
-        if(isZero($VenueEarn)){$VenueEarn = 0;}
-        $sql = "INSERT INTO venue (Earn, Location, Date) VALUES ('".$VenueEarn."', '".$Location."', '".$Selling_Date."')";
-        
-        CheckQuery($sql);
+    //Venue
+        $venue_payout = $_POST['venue-payout'];
+        if(!isZero($venue_payout)){
+            $sql .= "INSERT INTO venue (Earn, Location, Date) VALUES ('".$venue_payout."', '".$location."', '".$show_date."');";
+            check_query($sql);
+        }
+
     //Outrun the Sun  
-        $OTSEarn = $_POST['OTSEarn'];
-        $OTSQuantity = $_POST['OTSQuan'];
-        if(!isZero($OTSQuantity)){
-            $sql = "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$OTSQuantity."', '".$OTSEarn."', '".$Location."', '".$Selling_Date."')";
-            CheckQuery($sql);
+        $ots_earn = $_POST['ots_earn'];
+        $ots_quantity = $_POST['ots-quantity'];
+        if(!isZero($ots_quantity)){
+            $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."')";
+            check_query($sql);
         }
     //Thursday Night Burrito Fight
-        $TNBFEarn = $_POST['TNBFEarn'];
-        $TNBFQuantity = $_POST['TNBFQuan'];
-        if(!isZero(TNBFQuantity)){
-            $sql = "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$TNBFQuantity."', '".$TNBFEarn."', '".$Location."', '".$Selling_Date."')";
-            CheckQuery($sql);
+        $tnbf_earn = $_POST['tnbf-earn'];
+        $tnbf_quantity = $_POST['tnbf-quantity'];
+        if(!isZero(tnbf_quantity)){
+            $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."')";
+            check_query($sql);
         }
     //Posters
-        $PosterEarn = $_POST['PosterEarn'];
-        $PosterQuantity = $_POST['PosterQuan'];
-        if(!isZero($PosterQuantity)){
-            $sql = "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$PosterQuantity."', '".$PosterEarn."', '".$Location."', '".$Selling_Date."')";
-            CheckQuery($sql);
+        $poster_earn = $_POST['poster-earn'];
+        $poster_quantity = $_POST['poster-quantity'];
+        if(!isZero($poster_quantity)){
+            $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."')";
+            check_query($sql);
         }
     //TSHIRTS
-        foreach($shirtSizes as $currSize){
+        foreach($shirt_sizes as $currSize){
             $shirtMALEEarn = $_POST[$currSize.'MEarn'];
             $shirtFEMALEEarn = $_POST[$currSize.'FEarn'];
             $shirtFEMALEQuantity = $_POST[$currSize.'FQuan'];
             $shirtMALEQuantity = $_POST[$currSize.'MQuan'];
 
             if(!isZero($shirtFEMALEQuantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtFEMALEQuantity."', '".$shirtFEMALEEarn."', '".$Location."', '".$Selling_Date."', '".$currSize."', 'F')";
-                CheckQuery($sql);
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtFEMALEQuantity."', '".$shirtFEMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'F')";
+                check_query($sql);
             }
             if(!isZero($shirtMALEQuantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtMALEQuantity."', '".$shirtMALEEarn."', '".$Location."', '".$Selling_Date."', '".$currSize."', 'M')";
-                CheckQuery($sql);
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtMALEQuantity."', '".$shirtMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'M')";
+                check_query($sql);
             }
         }
         
@@ -69,7 +69,7 @@
             echo "oh boy. there were/was ".$err." problem(s)";
         }
 
-    function CheckQuery($sql){
+    function check_query($sql){
         if (!mysqli_query($sql)){
             die("Oh boy... =/".mysqli_error());
             $err = True;
@@ -79,7 +79,6 @@
     }
     function isZero($val){
         return $val == 0 || empty($val);
- 
-       }
+    }
     
 ?>
