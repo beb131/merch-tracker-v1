@@ -1,6 +1,6 @@
 <?php
     //META variables
-        $host = "localhost:3306";
+        $host = "localhost";
         $username = "schwam_merchUser";
         $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
@@ -68,12 +68,15 @@
         
         var_dump($sql);
         
+        echo "pre-query-check"
         if ($conn->query($sql) === TRUE) {
+            mysqli_query($conn,$sql);
             echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
         } else {
             echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
 
+        echo "closing"
         $conn->close();
 
     // //Czech for errors
