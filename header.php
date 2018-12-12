@@ -4,7 +4,7 @@
 	<title>Schwam Merch</title>
 	<link rel="stylesheet" type="text/css" href="assets/css/style.css">
 	<script src="assets/js/main.js"></script>
-	<link rel='shortcut icon' href='assets/media/schwamLogoOutline.png' type='image/x-icon'/ >
+	<link rel='shortcut icon' href='assets/media/schwamface_300DPI.png' type='image/x-icon'/ >
 	<meta name="robots" content="noindex, nofollow">
 </head>
 
