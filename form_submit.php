@@ -10,7 +10,7 @@
         $show_date = $_POST['show-date']; 
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
 	    $sql = "";
-        $conn = new mysqli($servername, $username, $password, $dbname);
+        $conn = new mysqli($host, $username, $password, $dbname);
         // Check connection
         if ($conn->connect_error) {
         die("Connection failed: " . $conn->connect_error);
@@ -63,6 +63,8 @@
                 //check_query($sql);
             }
         }
+        
+        var_dump($conn);
         
         var_dump($sql);
         
