@@ -33,7 +33,7 @@
         if(!isZero(tnbf_quantity)){
             $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."');";
         } else {
-            console.log("TEST");
+            echo "TEST";
         }
     //Posters
         $poster_earn = $_POST['poster-earn'];
