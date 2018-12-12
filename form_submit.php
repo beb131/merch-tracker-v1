@@ -30,21 +30,21 @@
         $ots_earn = $_POST['ots_earn'];
         $ots_quantity = $_POST['ots-quantity'];
         if(!isZero($ots_quantity)){
-            $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."')";
+            $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."');";
             //check_query($sql);
         }
     //Thursday Night Burrito Fight
         $tnbf_earn = $_POST['tnbf-earn'];
         $tnbf_quantity = $_POST['tnbf-quantity'];
         if(!isZero(tnbf_quantity)){
-            $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."')";
+            $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."');";
             //check_query($sql);
         }
     //Posters
         $poster_earn = $_POST['poster-earn'];
         $poster_quantity = $_POST['poster-quantity'];
         if(!isZero($poster_quantity)){
-            $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."')";
+            $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."');";
             //check_query($sql);
         }
     //TSHIRTS
@@ -55,11 +55,11 @@
             $shirt_male_quantity = $_POST[$currSize.'M-quantity'];
 
             if(!isZero($shirt_female_quantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F')";
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
                 //check_query($sql);
             }
             if(!isZero($shirt_male_quantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M')";
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
                 //check_query($sql);
             }
         }
