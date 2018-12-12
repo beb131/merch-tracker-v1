@@ -1,10 +1,13 @@
-
+/************** Body ****************/
+body {
+	background-color: #c8cfd6;
+}
 /************** Header **************/
 #logo {
     text-align: center;
 }
 #logo img {
-    width: 50%;
+	max-width:300px;
 }
 /*************** GENERAL *************/
 h1, h2, h3 {
