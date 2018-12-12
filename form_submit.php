@@ -49,20 +49,22 @@
         }
     //TSHIRTS
         foreach($shirt_sizes as $currSize){
-            $shirtMALEEarn = $_POST[$currSize.'M-earn'];
-            $shirtFEMALEEarn = $_POST[$currSize.'F-earn'];
-            $shirtFEMALEQuantity = $_POST[$currSize.'F-quantity'];
-            $shirtMALEQuantity = $_POST[$currSize.'M-quantity'];
+            $shirt_male_earn = $_POST[$currSize.'M-earn'];
+            $shirt_female_earn = $_POST[$currSize.'F-earn'];
+            $shirt_female_quantity = $_POST[$currSize.'F-quantity'];
+            $shirt_male_quantity = $_POST[$currSize.'M-quantity'];
 
-            if(!isZero($shirtFEMALEQuantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtFEMALEQuantity."', '".$shirtFEMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'F')";
+            if(!isZero($shirt_female_quantity)){
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F')";
                 //check_query($sql);
             }
-            if(!isZero($shirtMALEQuantity)){
-                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtMALEQuantity."', '".$shirtMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'M')";
+            if(!isZero($shirt_male_quantity)){
+                $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M')";
                 //check_query($sql);
             }
         }
+        
+        var_dump($sql);
         
         if ($conn->query($sql) === TRUE) {
             echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
