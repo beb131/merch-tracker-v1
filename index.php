@@ -14,7 +14,7 @@
                     <p> 
                     <input id="date-input" class="form_label_head"  type="date" name="show-date" value="<?php echo date("Y-m-d"); ?>" min="2011-02-18"/>
                     <p>
-                    <input id="venue-payout" class="form_label_head" type="number" name="venue-payout" placeholder="Venue Total"/>
+                    <input id="venue-payout" class="form_label_head" type="number" min="0" name="venue-payout" placeholder="Venue Total"/>
                 </div>
         </div>
     <hr>
@@ -26,15 +26,15 @@
             <p>OTS:<br />
             <div class="cd-boxes">
                 <input id="ots" type="button" value="-1" onclick="decQuantity(this.id, 'CD')" class="button1">
-                <input id="ots-quantity"   class="form_label" type="number" name="ots-quantity">
-                <input id="ots-earn" class="form_label" placeholder="$$$" type="number" name="ots-earn">
+                <input id="ots-quantity"   class="form_label" type="number" min="0" name="ots-quantity">
+                <input id="ots-earn" class="form_label" placeholder="$$$" type="number" min="0" name="ots-earn">
                 <input id="ots" type="button" value="+1" onclick="incQuantity(this.id, 'CD')" class="button1">
             </div>
             <p>TNBF:<br/>
             <div class="cd-boxes">       
                 <input id="tnbf" type="button" value="-1" onclick="decQuantity(this.id, 'CD')" class="button1">
-                <input id="tnbf-quantity"   class="form_label" type="number" name="tnbf-quantity">
-                <input id="tnbf-earn" class="form_label" placeholder="$$$" type="number" name="tnbf-earn">
+                <input id="tnbf-quantity"   class="form_label" type="number" min="0" name="tnbf-quantity">
+                <input id="tnbf-earn" class="form_label" placeholder="$$$" type="number" min="0" name="tnbf-earn">
                 <input id="tnbf" type="button" value="+1" onclick="incQuantity(this.id, 'CD')" class="button1">
             </div>
         </div>
@@ -46,20 +46,20 @@
             <h1> Posters!</h1>
             <p>
                 <input id="poster" type="button" value="-1" onclick="decQuantity(this.id, 'Poster')" class="button1">
-                <input id="poster-quantity"   class="form_label" type="number" name="poster-quantity">
-                <input id="poster-earn" class="form_label" placeholder="$$$" type="number" name="poster-earn">
+                <input id="poster-quantity"   class="form_label" type="number" min="0" name="poster-quantity">
+                <input id="poster-earn" class="form_label" placeholder="$$$" type="number" min="0" name="poster-earn">
                 <input id="poster" type="button" value="+1" onclick="incQuantity(this.id, 'Poster')" class="button1">
         </div>
     <hr>
     <!--________________________________-->
-    <!--____________HATS_____________-->
+    <!--____________HATS________________-->
     <!--________________________________-->
     <div id="poster_info_container" class="section">
             <h1> Hats!</h1>
             <p>
                 <input id="hat" type="button" value="-1" onclick="decQuantity(this.id, 'Hat')" class="button1">
-                <input id="hat-quantity"   class="form_label" type="number" name="hat-quantity">
-                <input id="hat-earn" class="form_label" placeholder="$$$" type="number" name="hat-earn">
+                <input id="hat-quantity"   class="form_label" type="number" min="0" name="hat-quantity">
+                <input id="hat-earn" class="form_label" placeholder="$$$" type="number" min="0" name="hat-earn">
                 <input id="hat" type="button" value="+1" onclick="incQuantity(this.id, 'Hat')" class="button1">
         </div>
     <hr>
@@ -70,8 +70,8 @@
             <h1> Beanies!</h1>
             <p>
                 <input id="beanie" type="button" value="-1" onclick="decQuantity(this.id, 'Beanie')" class="button1">
-                <input id="beanie-quantity"   class="form_label" type="number" name="beanie-quantity">
-                <input id="beanie-earn" class="form_label" placeholder="$$$" type="number" name="beanie-earn">
+                <input id="beanie-quantity"   class="form_label" type="number" min="0" name="beanie-quantity">
+                <input id="beanie-earn" class="form_label" placeholder="$$$" type="number" min="0" name="beanie-earn">
                 <input id="beanie" type="button" value="+1" onclick="incQuantity(this.id, 'Beanie')" class="button1">
         </div>
     <hr>   
@@ -84,7 +84,7 @@
                 <div class="box_border">
                     <p><h2>X Small</h2>
                         <input id="XSM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="XSM-quantity" class="form_male" type="number" name="XSM-quantity">
+                        <input id="XSM-quantity" class="form_male" type="number" min="0" name="XSM-quantity">
                         <input id="XSM-earn" class="form_male" placeholder="$$$" type ="number" name ="XSM-earn">
                         <input id="XSM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -96,7 +96,7 @@
                 <div class="box_border">
                     <p><h2>Small:</h2>
                         <input id="SM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="SM-quantity" class="form_male" type="number" name="SM-quantity">
+                        <input id="SM-quantity" class="form_male" type="number" min="0" name="SM-quantity">
                         <input id="SM-earn" class="form_male" placeholder="$$$" type ="number" name ="SM-earn">
                         <input id="SM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -108,7 +108,7 @@
                 <div class="box_border">
                     <p><h2>Medium:</h2>
                         <input id="MM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="MM-quantity" class="form_male" type="number" name="MM-quantity">
+                        <input id="MM-quantity" class="form_male" type="number" min="0" name="MM-quantity">
                         <input id="MM-earn" class="form_male" placeholder="$$$" type ="number" name ="MM-earn">
                         <input id="MM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -120,7 +120,7 @@
                 <div class="box_border">
                     <p><h2>Large:</h2>
                         <input id="LM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="LM-quantity" class="form_male" type="number" name="LM-quantity">
+                        <input id="LM-quantity" class="form_male" type="number" min="0" name="LM-quantity">
                         <input id="LM-earn" class="form_male" placeholder="$$$" type ="number" name ="LM-earn">
                         <input id="LM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -132,7 +132,7 @@
                 <div class="box_border">
                     <p><h2>X Large:</h2>
                         <input id="XLM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="XLM-quantity" class="form_male" type="number" name="XLM-quantity">
+                        <input id="XLM-quantity" class="form_male" type="number" min="0" name="XLM-quantity">
                         <input id="XLM-earn" class="form_male" placeholder="$$$" type ="number" name ="XLM-earn">
                         <input id="XLM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -144,7 +144,7 @@
                 <div class="box_border">
                     <p><h2>2X Large</h2>
                         <input id="XXLM" type="button" value="-1" onclick="decQuantity(this.id, 'Shirt')" class="button1">
-                        <input id="XXLM-quantity" class="form_male" type="number" name="XXLM-quantity">
+                        <input id="XXLM-quantity" class="form_male" type="number" min="0" name="XXLM-quantity">
                         <input id="XXLM-earn" class="form_male" placeholder="$$$" type ="number" name ="XXLM-earn">
                         <input id="XXLM" type="button" value="+1" onclick="incQuantity(this.id, 'Shirt')" class="button1">
                     <p>
@@ -165,7 +165,7 @@
                 <div class="box_border">
                     <p><h2>X Small</h2>
                         <input id="dyedXSM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedXSM-quantity" class="form_male" type="number" name="dyed-XSM-quantity">
+                        <input id="dyedXSM-quantity" class="form_male" type="number" min="0" name="dyed-XSM-quantity">
                         <input id="dyedXSM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-XSM-earn">
                         <input id="dyedXSM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
@@ -177,7 +177,7 @@
                 <div class="box_border">
                     <p><h2>Small:</h2>
                         <input id="dyedSM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedSM-quantity" class="form_male" type="number" name="dyed-SM-quantity">
+                        <input id="dyedSM-quantity" class="form_male" type="number" min="0" name="dyed-SM-quantity">
                         <input id="dyedSM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-SM-earn">
                         <input id="dyedSM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
@@ -189,7 +189,7 @@
                 <div class="box_border">
                     <p><h2>Medium:</h2>
                         <input id="dyedMM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedMM-quantity" class="form_male" type="number" name="dyed-MM-quantity">
+                        <input id="dyedMM-quantity" class="form_male" type="number" min="0" name="dyed-MM-quantity">
                         <input id="dyedMM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-MM-earn">
                         <input id="dyedMM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
@@ -201,7 +201,7 @@
                 <div class="box_border">
                     <p><h2>Large:</h2>
                         <input id="dyedLM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedLM-quantity" class="form_male" type="number" name="dyed-LM-quantity">
+                        <input id="dyedLM-quantity" class="form_male" type="number" min="0" name="dyed-LM-quantity">
                         <input id="dyedLM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-LM-earn">
                         <input id="dyedLM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
@@ -213,7 +213,7 @@
                 <div class="box_border">
                     <p><h2>X Large:</h2>
                         <input id="dyedXLM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedXLM-quantity" class="form_male" type="number" name="dyed-XLM-quantity">
+                        <input id="dyedXLM-quantity" class="form_male" type="number" min="0" name="dyed-XLM-quantity">
                         <input id="dyedXLM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-XLM-earn">
                         <input id="dyedXLM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
@@ -225,7 +225,7 @@
                 <div class="box_border">
                     <p><h2>2X Large</h2>
                         <input id="dyedXXLM" type="button" value="-1" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">
-                        <input id="dyedXXLM-quantity" class="form_male" type="number" name="dyed-XXLM-quantity">
+                        <input id="dyedXXLM-quantity" class="form_male" type="number" min="0" name="dyed-XXLM-quantity">
                         <input id="dyedXXLM-earn" class="form_male" placeholder="$$$" type ="number" name="dyed-XXLM-earn">
                         <input id="dyedXXLM" type="button" value="+1" onclick="incQuantity(this.id, 'DyedShirt')" class="button1">
                     <p>
