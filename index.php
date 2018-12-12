@@ -9,11 +9,8 @@
         <div id="show_info_container" class="section">
             <h1> When and Where?</h1>
                 <div>
-                    <p>
                     <input id="loc-input" class="form_label_head" placeholder="Location" type="text" name="location" autofocus="autofocus"/>
-                    <p> 
                     <input id="date-input" class="form_label_head"  type="date" name="show-date" value="<?php echo date("Y-m-d"); ?>" min="2011-02-18"/>
-                    <p>
                     <input id="venue-payout" class="form_label_head" type="number" min="0" name="venue-payout" placeholder="Venue Total"/>
                 </div>
         </div>
@@ -54,7 +51,7 @@
     <!--________________________________-->
     <!--____________HATS________________-->
     <!--________________________________-->
-    <div id="poster_info_container" class="section">
+    <div id="hat_info_container" class="section">
             <h1> Hats!</h1>
             <p>
                 <input id="hat" type="button" value="-1" onclick="decQuantity(this.id, 'Hat')" class="button1">
@@ -78,7 +75,7 @@
     <!--________________________________-->
     <!--___________UNDYED TSHIRTS_______-->
     <!--________________________________-->
-        <div id="quantity_container" class="section">
+        <div id="tshirt_container" class="section">
             <h1>UnDyed Shirts</h1>
             <div id="box_container">
                 <div class="box_border">

@@ -49,7 +49,6 @@ h2 {
         margin: auto;
 }
 .form_label {
-	background-color: #FDF108;
 	width: 20%;
 	height: 90px;
 }
@@ -64,7 +63,6 @@ h2 {
 	height: 90px;
 }
 .form_label_head {
-	background-color: #FDF108;
 	width: 150px;
 	height: 30px;
 }
@@ -96,10 +94,10 @@ input {
         height: 7vw;
 }
 /*placeholder styles*/
-::-webkit-input-placeholder {color: #fff;}
-:-moz-placeholder { /* Firefox 18- */color: #fff;  }
-::-moz-placeholder {  /* Firefox 19+ */color: #fff;  }
-:-ms-input-placeholder {  color: #fff;  }        
+::-webkit-input-placeholder {color: #aaa;}
+:-moz-placeholder { /* Firefox 18- */color: #aaa;  }
+::-moz-placeholder {  /* Firefox 19+ */color: #aaa;  }
+:-ms-input-placeholder {  color: #aaa;  }        
 
 [type="text"]::-webkit-input-placeholder {color: #aaa;}
 [type="text"]:-moz-placeholder { /* Firefox 18- */color: #aaa;  }
