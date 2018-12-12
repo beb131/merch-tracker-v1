@@ -49,10 +49,10 @@
         }
     //TSHIRTS
         foreach($shirt_sizes as $currSize){
-            $shirtMALEEarn = $_POST[$currSize.'MEarn'];
-            $shirtFEMALEEarn = $_POST[$currSize.'FEarn'];
-            $shirtFEMALEQuantity = $_POST[$currSize.'FQuan'];
-            $shirtMALEQuantity = $_POST[$currSize.'MQuan'];
+            $shirtMALEEarn = $_POST[$currSize.'M-earn'];
+            $shirtFEMALEEarn = $_POST[$currSize.'F-earn'];
+            $shirtFEMALEQuantity = $_POST[$currSize.'F-quantity'];
+            $shirtMALEQuantity = $_POST[$currSize.'M-quantity'];
 
             if(!isZero($shirtFEMALEQuantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirtFEMALEQuantity."', '".$shirtFEMALEEarn."', '".$location."', '".$show_date."', '".$currSize."', 'F')";
