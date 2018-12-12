@@ -73,7 +73,7 @@ h2 {
 	display: none;
 }
 .hideAfterSubmit {
-	display: anything;
+	display: block;
 }
 
 input {
@@ -86,7 +86,7 @@ input {
         font-size: 20px;
     }
 }
-#LocBox, #DateBox, #VenueDinero {
+#loc-input, #DateBox, #venue-payout {
         font-size:20px;
         text-align:center;
         width: 100%;
