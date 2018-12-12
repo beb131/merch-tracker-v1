@@ -72,21 +72,17 @@
         //     echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         // }
 
-        if ($conn->multi_query($sql)) {
+        $result = mysqli_multi_query($conn, $sql);
+
+        if ($result) {
             do {
-                /* store first result set */
-                var_dump($result);
-                if ($result = $conn->store_result()) {
-                    while ($row = $result->fetch_row()) {
-                        printf("%s\n", $row[0]);
-                    }
-                    $result->free();
+                // grab the result of the next query
+                if (($result = mysqli_store_result($conn)) === false && mysqli_error($conn) != '') {
+                    echo "Query failed: " . mysqli_error($conn);
                 }
-                /* print divider */
-                if ($conn->more_results()) {
-                    printf("-----------------\n");
-                }
-            } while ($conn->next_result());
+            } while (mysqli_more_results($conn) && mysqli_next_result($conn)); // while there are more results
+        } else {
+            echo "First query failed..." . mysqli_error($conn);
         }
 
         $conn->close();
