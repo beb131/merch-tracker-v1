@@ -67,16 +67,14 @@
         var_dump($conn);
         
         var_dump($sql);
-        
-        echo "pre-query-check";
+
         if ($conn->query($sql) === TRUE) {
             mysqli_query($conn,$sql);
             echo "<script type= 'text/javascript'>alert('New record created successfully');</script>";
         } else {
             echo "<script type= 'text/javascript'>alert('Error: " . $sql . "<br>" . $conn->error."');</script>";
         }
-
-        echo "closing";
+        
         $conn->close();
 
     // //Czech for errors
