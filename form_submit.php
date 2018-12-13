@@ -5,7 +5,7 @@
         $password = "9mR*dU?KNK8Q";
         $dbname = "schwam_merchandise";
 
-        $location = $_POST['location'];
+        $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
         $show_date = $_POST['show-date']; 
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
         $sql = "";
