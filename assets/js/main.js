@@ -62,11 +62,13 @@ function decQuantity(clickID, merchType) {
     return;
   }
   //Decrement
-  num -= 1;
-  price -= priceInc;
-  //Set parent values
-  priceInput.value = price;
-  numInput.value = num;
+  if (num >= 0) {
+    num -= 1;
+    price -= priceInc;
+    //Set parent values
+    priceInput.value = price;
+    numInput.value = num;
+  }
 }
 
 function clearValue(clickID) {
