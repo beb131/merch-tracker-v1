@@ -79,13 +79,20 @@ h2 {
 }
 
 button {
-	font-size:60px;
+    font-size: 45px;
+    height: 90px;
+    display: inline-block;
+    width: 80px;
 }
 
 input {
 	color:#222;
 	font-size: 60px;
 	text-align: center;
+	border-color: #000;
+	border-width: 1px;
+	display: inline-block;
+	vertical-align: top;
 }
 
 @media screen and (max-width:300px) {
