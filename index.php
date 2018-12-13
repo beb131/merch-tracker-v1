@@ -228,7 +228,7 @@
             </div>
         </div> <!--/section-->       
         <div id="submit">
-            <input type="submit" value="Submit the Form" class="submit-form-1"/>
+            <input type="submit" value="Submit" class="submit-form-1"/>
         </div> 
     </form>
 

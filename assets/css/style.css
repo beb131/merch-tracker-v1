@@ -101,6 +101,14 @@ input {
 	vertical-align: top;
 }
 
+input.submit-form-1 {
+    font-size: 30px;
+    padding: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: black;
+}
+
 @media screen and (max-width:300px) {
     input {
         font-size: 20px;
