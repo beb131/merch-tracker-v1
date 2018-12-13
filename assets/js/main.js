@@ -61,8 +61,9 @@ function decQuantity(clickID, merchType) {
   } else {
     return;
   }
-  //Decrement
+
   if (num >= 0) {
+    //Decrement
     num -= 1;
     price -= priceInc;
     //Set parent values
