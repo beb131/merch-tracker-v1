@@ -30,7 +30,7 @@
         $ots_quantity = $_POST['ots-quantity'];
         if(!isZero($ots_quantity)){
             $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."');";
-            $response .= "\nYou sold " . $ots_quantity . " Outrun the Sun CD's for a total of $" . $ots_earn . ".";
+            $response .= "\nYou sold " . $ots_quantity . " Outrun the Sun CD(s) for a total of $" . $ots_earn . ".";
             $totalEarn += $ots_earn;
         }
     //Thursday Night Burrito Fight
@@ -38,7 +38,7 @@
         $tnbf_quantity = $_POST['tnbf-quantity'];
         if(!isZero($tnbf_quantity)){
             $sql .= "INSERT INTO tnbf (Quantity, Earn, Location, Date) VALUES ('".$tnbf_quantity."', '".$tnbf_earn."', '".$location."', '".$show_date."');";
-            $response .= "\nYou sold " . $tnbf_quantity . " Thursday Night Burrito Fight CD's for a total of $" . $tnbf_earn . ".";
+            $response .= "\nYou sold " . $tnbf_quantity . " Thursday Night Burrito Fight CD(s) for a total of $" . $tnbf_earn . ".";
             $totalEarn += $tnbf_earn;
         }
     //Posters
@@ -46,7 +46,7 @@
         $poster_quantity = $_POST['poster-quantity'];
         if(!isZero($poster_quantity)){
             $sql .= "INSERT INTO posters (Quantity, Earn, Location, Date) VALUES ('".$poster_quantity."', '".$poster_earn."', '".$location."', '".$show_date."');";
-            $response .= "\nYou sold " . $poster_quantity . " Posters for a total of $" . $poster_earn . ".";
+            $response .= "\nYou sold " . $poster_quantity . " Poster(s) for a total of $" . $poster_earn . ".";
             $totalEarn += $poster_earn;
         }
     //Hats
@@ -54,7 +54,7 @@
         $hat_quantity = $_POST['hat-quantity'];
         if(!isZero($hat_quantity)){
             $sql .= "INSERT INTO hats (Quantity, Earn, Location, Date) VALUES ('".$hat_quantity."', '".$hat_earn."', '".$location."', '".$show_date."');";
-            $response .= "\nYou sold " . $hat_quantity . " Hats for a total of $" . $hat_earn . ".";
+            $response .= "\nYou sold " . $hat_quantity . " Hat(s) for a total of $" . $hat_earn . ".";
             $totalEarn += $hat_earn;
         }
     //Beanies
@@ -62,7 +62,7 @@
         $beanie_quantity = $_POST['beanie-quantity'];
         if(!isZero($beanie_quantity)){
             $sql .= "INSERT INTO beanies (Quantity, Earn, Location, Date) VALUES ('".$beanie_quantity."', '".$beanie_earn."', '".$location."', '".$show_date."');";
-            $response .= "\nYou sold " . $beanie_quantity . " Beanies for a total of $" . $beanie_earn . ".";
+            $response .= "\nYou sold " . $beanie_quantity . " Beanie(s) for a total of $" . $beanie_earn . ".";
             $totalEarn += $beanie_earn;
         }        
     //UNDYED TSHIRTS
@@ -74,12 +74,12 @@
 
             if(!isZero($shirt_female_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                $response .= "\nYou sold " . $shirt_female_quantity . " Women's Undyed Shirts for a total of $" . $shirt_female_earn . ".";
+                $response .= "\nYou sold " . $shirt_female_quantity . " Women's Undyed Shirt(s) for a total of $" . $shirt_female_earn . ".";
                 $totalEarn += $shirt_female_earn;
             }
             if(!isZero($shirt_male_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $response .= "\nYou sold " . $shirt_male_quantity . " Men's Undyed Shirts for a total of $" . $shirt_male_earn . ".";
+                $response .= "\nYou sold " . $shirt_male_quantity . " Men's Undyed Shirt(s) for a total of $" . $shirt_male_earn . ".";
                 $totalEarn += $shirt_male_earn;
             }
         }
@@ -92,12 +92,12 @@
 
             if(!isZero($dyed_shirt_female_quantity)){
                 $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_female_quantity."', '".$dyed_shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                $response .= "\nYou sold " . $dyed_shirt_female_quantity . " Women's Dyed Shirts for a total of $" . $dyed_shirt_female_earn . ".";
+                $response .= "\nYou sold " . $dyed_shirt_female_quantity . " Women's Dyed Shirt(s) for a total of $" . $dyed_shirt_female_earn . ".";
                 $totalEarn += $dyed_shirt_female_earn;
             }
             if(!isZero($dyed_shirt_male_quantity)){
                 $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_male_quantity."', '".$dyed_shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $response .= "\nYou sold " . $dyed_shirt_male_quantity . " Men's Dyed Shirts for a total of $" . $dyed_shirt_male_earn . ".";
+                $response .= "\nYou sold " . $dyed_shirt_male_quantity . " Men's Dyed Shirt(s) for a total of $" . $dyed_shirt_male_earn . ".";
                 $totalEarn += $dyed_shirt_male_earn;
             }
         }
