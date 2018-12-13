@@ -1,6 +1,7 @@
 /************** Body ****************/
 body {
-	background-color: #666699; 
+	background-color: #666699;
+	color: #efedef;
 }
 /************** Header **************/
 #logo {
@@ -80,9 +81,9 @@ h2 {
 
 button {
     font-size: 45px;
-    height: 90px;
+	height: 90px;
+	width: 80px;
     display: inline-block;
-    width: 80px;
 }
 
 input {
