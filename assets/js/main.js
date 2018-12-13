@@ -62,7 +62,7 @@ function decQuantity(clickID, merchType) {
     return;
   }
 
-  if (num >= 0) {
+  if (num > 0) {
     //Decrement
     num -= 1;
     price -= priceInc;
