@@ -110,7 +110,7 @@
                 echo "Query failed: " . mysqli_error($conn);
             }
         } while (mysqli_more_results($conn) && mysqli_next_result($conn)); // while there are more results
-        echo $response;
+        echo $response . "\n Total Amount Earned: $" . $totalEarn;
     } else {
         echo "First query failed..." . mysqli_error($conn);
     }
