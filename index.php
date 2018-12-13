@@ -14,7 +14,6 @@
                     <input id="venue-payout" class="form_label_head" type="number" min="0" name="venue-payout" placeholder="Venue Total"/>
                 </div>
         </div>
-    <hr>
     <!--________________________________-->
     <!--_____________CDS________________-->
     <!--________________________________-->
@@ -35,7 +34,6 @@
                 <button id="tnbf" type="button" onclick="incQuantity(this.id, 'CD')" class="button1">+1</button>
             </div>
         </div>
-    <hr>
     <!--________________________________-->
     <!--____________POSTERS_____________-->
     <!--________________________________-->
@@ -47,7 +45,6 @@
                 <input id="poster-earn" class="form_label" placeholder="$$$" type="number" min="0" name="poster-earn">
                 <button id="poster" type="button" onclick="incQuantity(this.id, 'Poster')" class="button1">+1</button>
         </div>
-    <hr>
     <!--________________________________-->
     <!--____________HATS________________-->
     <!--________________________________-->
@@ -59,7 +56,6 @@
                 <input id="hat-earn" class="form_label" placeholder="$$$" type="number" min="0" name="hat-earn">
                 <button id="hat" type="button" onclick="incQuantity(this.id, 'Hat')" class="button1">+1</button>
         </div>
-    <hr>
     <!--________________________________-->
     <!--____________BEANIES_____________-->
     <!--________________________________-->
@@ -71,7 +67,6 @@
                 <input id="beanie-earn" class="form_label" placeholder="$$$" type="number" min="0" name="beanie-earn">
                 <button id="beanie" type="button" onclick="incQuantity(this.id, 'Beanie')" class="button1">+1</button>
         </div>
-    <hr>   
     <!--________________________________-->
     <!--___________UNDYED TSHIRTS_______-->
     <!--________________________________-->
@@ -152,7 +147,6 @@
                 </div>
             </div>
         </div> <!--/section-->
-        <hr>
     <!--________________________________-->
     <!--___________DYED TSHIRTS_________-->
     <!--________________________________-->        
