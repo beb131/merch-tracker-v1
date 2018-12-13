@@ -150,9 +150,9 @@
     <!--________________________________-->
     <!--___________DYED TSHIRTS_________-->
     <!--________________________________-->        
-        <div id="dyedquantity_container" class="section">
+        <div id="dyed_tshirt_container" class="section">
             <h1>Dyed Shirts</h1>
-            <div id="dyedbox_container">
+            <div id="box_container">
                 <div class="box_border">
                     <p><h2>X Small</h2>
                         <button id="dyedXSM" type="button" onclick="decQuantity(this.id, 'DyedShirt')" class="button1">-1</button>

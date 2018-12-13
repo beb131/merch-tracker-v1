@@ -40,15 +40,20 @@ h2 {
 #box_container {
     display: inline-block;
     width: 100%;
-    margin: 1.5%
+}
+
+#tshirt_container {
+    background-color: rgba(0,0,0,0.4);
+}
+
+#dyed_tshirt_container {
+    background: url('assets/media/tiedye-bg.jpeg');
 }
 /**************** FORM *************/
 .box_border {
-	border: 1px solid black;
 	width: 95%;
-        /*width: 16%;*/
 	float: none;
-        margin: auto;
+    margin: auto;
 }
 .form_label {
 	width: 20%;
