@@ -10,7 +10,7 @@
         $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
         $sql = "";
         $response = "<h2>Success!</h2><ul>";
-        $totalEarn = 0;
+        $totalEarn = 0; 
 
         $conn = new mysqli($host, $username, $password, $dbname);
         // Check connection
