@@ -11,6 +11,7 @@
         $sql = "";
         $response = "<h2>Success!</h2><ul>";
         $totalEarn = 0; 
+        $shirtsSold = false;
 
         $conn = new mysqli($host, $username, $password, $dbname);
         // Check connection
@@ -66,23 +67,33 @@
             $totalEarn += $beanie_earn;
         }        
     //UNDYED TSHIRTS
+        $totalFemaleUndyedShirtQuan = 0;
+        $totalMaleUndyedShirtQuan = 0;
         foreach($shirt_sizes as $currSize){
             $shirt_male_earn = $_POST[$currSize.'M-earn'];
             $shirt_female_earn = $_POST[$currSize.'F-earn'];
             $shirt_female_quantity = $_POST[$currSize.'F-quantity'];
             $shirt_male_quantity = $_POST[$currSize.'M-quantity'];
-
+            
             if(!isZero($shirt_female_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                $response .= "<br><li>You sold " . $shirt_female_quantity . " Women's Undyed Shirt(s) for a total of $" . $shirt_female_earn . ".</li>";
+                $totalFemaleUndyedShirtQuan++;
                 $totalEarn += $shirt_female_earn;
             }
             if(!isZero($shirt_male_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $response .= "<br><li>You sold " . $shirt_male_quantity . " Men's Undyed Shirt(s) for a total of $" . $shirt_male_earn . ".</li>";
+                $totalMaleUndyedShirtQuan++
                 $totalEarn += $shirt_male_earn;
             }
         }
+        
+        if($totalFemaleUndyedShirtQuan > 0) {
+            $response .= "<br><li>You sold " . $shirt_female_quantity . " Women's Undyed Shirt(s) for a total of $" . $shirt_female_earn . ".</li>";
+        }
+        if($totalMaleUndyedShirtQuan > 0) {
+            $response .= "<br><li>You sold " . $shirt_male_quantity . " Men's Undyed Shirt(s) for a total of $" . $shirt_male_earn . ".</li>";
+        }
+
     //DYED TSHIRTS
         foreach($shirt_sizes as $currSize){
             $dyed_shirt_male_earn = $_POST['dyed-'.$currSize.'M-earn'];
