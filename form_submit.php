@@ -69,6 +69,7 @@
     //UNDYED TSHIRTS
         $totalFemaleUndyedShirtQuan = 0;
         $totalMaleUndyedShirtQuan = 0;
+
         foreach($shirt_sizes as $currSize){
             $shirt_male_earn = $_POST[$currSize.'M-earn'];
             $shirt_female_earn = $_POST[$currSize.'F-earn'];
@@ -77,12 +78,12 @@
             
             if(!isZero($shirt_female_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_female_quantity."', '".$shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                $totalFemaleUndyedShirtQuan++;
+                $totalFemaleUndyedShirtQuan += $shirt_female_quantity;
                 $totalFemaleUndyedShirtEarn += $shirt_female_earn;
             }
             if(!isZero($shirt_male_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $totalMaleUndyedShirtQuan++;
+                $totalMaleUndyedShirtQuan += $shirt_male_quantity;
                 $totalMaleUndyedShirtEarn += $shirt_male_earn;
             }
         }
@@ -97,6 +98,9 @@
         }
 
     //DYED TSHIRTS
+        $totalFemaleDyedShirtQuan = 0;
+        $totalMaleDyedShirtQuan = 0;
+
         foreach($shirt_sizes as $currSize){
             $dyed_shirt_male_earn = $_POST['dyed-'.$currSize.'M-earn'];
             $dyed_shirt_female_earn = $_POST['dyed-'.$currSize.'F-earn'];
@@ -105,15 +109,26 @@
 
             if(!isZero($dyed_shirt_female_quantity)){
                 $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_female_quantity."', '".$dyed_shirt_female_earn."', '".$location."', '".$show_date."', '".$currSize."', 'F');";
-                $response .= "<br><li>You sold " . $dyed_shirt_female_quantity . " Women's Dyed Shirt(s) for a total of $" . $dyed_shirt_female_earn . ".</li>";
-                $totalEarn += $dyed_shirt_female_earn;
+                $totalFemaleDyedShirtQuan += $dyed_shirt_female_quantity;
+                $totalFemaleDyedShirtEarn += $dyed_shirt_female_earn;                
             }
             if(!isZero($dyed_shirt_male_quantity)){
                 $sql .= "INSERT INTO dyed_shirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$dyed_shirt_male_quantity."', '".$dyed_shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $response .= "<br><li>You sold " . $dyed_shirt_male_quantity . " Men's Dyed Shirt(s) for a total of $" . $dyed_shirt_male_earn . ".</li>";
-                $totalEarn += $dyed_shirt_male_earn;
+                $totalMaleDyedShirtQuan += $dyed_shirt_male_quantity;
+                $totalMaleDyedShirtEarn += $dyed_shirt_male_earn;
             }
         }
+
+        if($totalFemaleDyedShirtQuan) {
+            $response .= "<br><li>You sold " . $totalFemaleDyedShirtQuan . " Women's Dyed Shirt(s) for a total of $" . $totalFemaleDyedShirtEarn . ".</li>";
+            $totalEarn += $totalFemaleDyedShirtEarn;
+        }
+
+        if($totalMaleDyedShirtQuan) {
+            $response .= "<br><li>You sold " . $totalMaleDyedShirtQuan . " Men's Dyed Shirt(s) for a total of $" . $totalMaleDyedShirtEarn . ".</li>";
+            $totalEarn += $totalMaleDyedShirtEarn;
+        }
+        
     $result = mysqli_multi_query($conn, $sql);
 
     if ($result) {
