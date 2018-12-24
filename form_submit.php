@@ -82,11 +82,11 @@
             }
             if(!isZero($shirt_male_quantity)){
                 $sql .= "INSERT INTO tshirts (Quantity, Earn, Location, Date, Size, MaleOrFemale) VALUES ('".$shirt_male_quantity."', '".$shirt_male_earn."', '".$location."', '".$show_date."', '".$currSize."', 'M');";
-                $totalMaleUndyedShirtQuan++
+                $totalMaleUndyedShirtQuan++;
                 $totalEarn += $shirt_male_earn;
             }
         }
-        
+
         if($totalFemaleUndyedShirtQuan > 0) {
             $response .= "<br><li>You sold " . $shirt_female_quantity . " Women's Undyed Shirt(s) for a total of $" . $shirt_female_earn . ".</li>";
         }
