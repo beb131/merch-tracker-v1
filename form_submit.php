@@ -88,11 +88,11 @@
         }
 
         if($totalFemaleUndyedShirtQuan > 0) {
-            $response .= "<br><li>You sold " . $totalFemaleUndyedShirtQuan . " Women's Undyed Shirt(s) for a total of $" . $shirt_female_earn . ".</li>";
+            $response .= "<br><li>You sold " . $totalFemaleUndyedShirtQuan . " Women's Undyed Shirt(s) for a total of $" . $totalFemaleUndyedShirtEarn . ".</li>";
             $totalEarn += $totalFemaleUndyedShirtEarn;
         }
         if($totalMaleUndyedShirtQuan > 0) {
-            $response .= "<br><li>You sold " . $shirt_male_quantity . " Men's Undyed Shirt(s) for a total of $" . $shirt_male_earn . ".</li>";
+            $response .= "<br><li>You sold " . $totalMaleUndyedShirtQuan . " Men's Undyed Shirt(s) for a total of $" . $totalMaleUndyedShirtEarn . ".</li>";
             $totalEarn += $totalMaleUndyedShirtEarn;
         }
 
