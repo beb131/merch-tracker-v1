@@ -69,6 +69,8 @@
     //UNDYED TSHIRTS
         $totalFemaleUndyedShirtQuan = 0;
         $totalMaleUndyedShirtQuan = 0;
+        $totalFemaleUndyedShirtEarn = 0;
+        $totalMaleUndyedShirtEarn = 0;
 
         foreach($shirt_sizes as $currSize){
             $shirt_male_earn = $_POST[$currSize.'M-earn'];
@@ -100,6 +102,8 @@
     //DYED TSHIRTS
         $totalFemaleDyedShirtQuan = 0;
         $totalMaleDyedShirtQuan = 0;
+        $totalFemaleDyedShirtEarn = 0;
+        $totalMaleDyedShirtEarn = 0;
 
         foreach($shirt_sizes as $currSize){
             $dyed_shirt_male_earn = $_POST['dyed-'.$currSize.'M-earn'];
@@ -128,7 +132,7 @@
             $response .= "<br><li>You sold " . $totalMaleDyedShirtQuan . " Men's Dyed Shirt(s) for a total of $" . $totalMaleDyedShirtEarn . ".</li>";
             $totalEarn += $totalMaleDyedShirtEarn;
         }
-        
+
     $result = mysqli_multi_query($conn, $sql);
 
     if ($result) {
