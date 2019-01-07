@@ -1,6 +1,6 @@
 <?php
     //Outrun the Sun  
-        $ots_earn = $_POST['ots_earn'];
+        $ots_earn = $_POST['ots-earn'];
         $ots_quantity = $_POST['ots-quantity'];
         if(!isZero($ots_quantity)){
             $sql .= "INSERT INTO ots (Quantity, Earn, Location, Date) VALUES ('".$ots_quantity."', '".$ots_earn."', '".$location."', '".$show_date."');";
