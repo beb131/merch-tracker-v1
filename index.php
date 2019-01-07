@@ -68,12 +68,20 @@
                 <button id="beanie" type="button" onclick="incQuantity(this.id, 'Beanie')" class="button1">+1</button>
         </div>
     <!--________________________________-->
-    <!--___________UNDYED TSHIRTS_______-->
+    <!--___________Black TSHIRTS_______-->
     <!--________________________________-->
         <div id="tshirt_container" class="section">
-            <h1>UnDyed Shirts</h1>
+            <h1>Black Shirts</h1>
             <div id="box_container">
                 <div class="box_border">
+                    <!--________________-->
+                    <!--____NEW INPUT____-->
+                    <!--________________--
+                    Size - Dropdown
+                    Quan - Number
+                    Earn - Number
+                    Male or female - Radio Button-->
+
                     <p><h2>X Small</h2>
                         <button id="XSM" type="button" onclick="decQuantity(this.id, 'Shirt')" class="button1">-1</button>
                         <input id="XSM-quantity" class="form_male" type="number" min="0" name="XSM-quantity">
