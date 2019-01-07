@@ -1,4 +1,4 @@
-<?php include 'header.php'; ?>
+<?php include 'partials/header.php'; ?>
 
 <header>
 	<div id="logo">
@@ -241,4 +241,4 @@
     </form>
 
 
-<?php include 'footer.php'; ?>
+<?php include 'partials/footer.php'; ?>

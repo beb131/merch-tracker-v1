@@ -19,17 +19,17 @@
     die("Connection failed: " . $conn->connect_error);
     }
         
-    include 'venue-payout.php';
+    include 'merch-types/venue-payout.php';
 
-    include 'cds.php';
+    include 'merch-types/cds.php';
 
-    include 'posters.php';
+    include 'merch-types/posters.php';
 
-    include 'headwear.php';
+    include 'merch-types/headwear.php';
 
-    include 'black-shirts.php';
+    include 'merch-types/black-shirts.php';
 
-    include 'dyed-shirts.php';
+    include 'merch-types/dyed-shirts.php';
 
     $result = mysqli_multi_query($conn, $sql);
 
