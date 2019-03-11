@@ -1,17 +1,17 @@
 <?php
-    //DB Connection
-    $host = "localhost";
-    $username = "schwam_merchUser";
-    $password = "9mR*dU?KNK8Q";
-    $dbname = "schwam_merchandise";
-
+    
+    // DB Connection Variables Declares in untracked /config.php
+    // $host
+    // $username
+    // $password
+    // $dbname
+    include '../config/config.php';
+    
     $location = filter_var($_POST['location'], FILTER_SANITIZE_STRING);
     $show_date = $_POST['show-date']; 
-    $shirt_sizes = array("XS", "S", "M", "L", "XL", "XXL");
     $sql = "";
     $response = "<h2>Success!</h2><ul>";
-    $totalEarn = 0; 
-    $shirtsSold = false;
+    $totalEarn = 0;
 
     $conn = new mysqli($host, $username, $password, $dbname);
     // Check connection

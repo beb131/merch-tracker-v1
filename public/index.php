@@ -2,7 +2,7 @@
 
 <header>
 	<div id="logo">
-		<img src="assets/media/schwamface_300DPI.png">
+		<img src="public/assets/media/schwamface_300DPI.png">
 	</div>
 </header>
     <form action="./form_submit.php" method="POST">
