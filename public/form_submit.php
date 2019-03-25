@@ -1,6 +1,6 @@
 <?php
     
-    // DB Connection Variables Declares in untracked /config.php
+    // DB Connection Variables Declared in untracked ../config/config.php
     // $host
     // $username
     // $password
