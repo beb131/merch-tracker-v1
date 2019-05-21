@@ -18,7 +18,11 @@ function incQuantity(clickID, merchType) {
     priceInc = 5;
   } else if (merchType === "Shirt") {
     priceInc = 10;
-  } else if (merchType === "DyedShirt") {
+  } else if (
+    merchType === "DyedShirt" ||
+    merchType === "DyedCrop" ||
+    merchType === "DyedTank"
+  ) {
     priceInc = 15;
   } else if (merchType === "Hat") {
     priceInc = 15;
@@ -52,7 +56,11 @@ function decQuantity(clickID, merchType) {
     priceInc = 5;
   } else if (merchType === "Shirt") {
     priceInc = 10;
-  } else if (merchType === "DyedShirt") {
+  } else if (
+    merchType === "DyedShirt" ||
+    merchType === "DyedCrop" ||
+    merchType === "DyedTank"
+  ) {
     priceInc = 15;
   } else if (merchType === "Hat") {
     priceInc = 15;
