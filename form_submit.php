@@ -109,7 +109,7 @@ foreach ($shirt_sizes as $currSize) {
 
     if (!isZero($dyed_crop_quantity)) {
         $sql .= "INSERT INTO dyed_crop_tops (Quantity, Earn, Location, Date, Size) VALUES ('" . $dyed_crop_quantity . "', '" . $dyed_crop_earn . "', '" . $location . "', '" . $show_date . "', '" . $currSize . "');";
-        $response .= "<br><li>You sold " . $dyed_crop_quantity . " Women's Dyed Shirt(s) for a total of $" . $dyed_crop_earn . ".</li>";
+        $response .= "<br><li>You sold " . $dyed_crop_quantity . " Dyed Crop Top(s) for a total of $" . $dyed_crop_earn . ".</li>";
         $totalEarn += $dyed_crop_earn;
     }
 }
@@ -121,7 +121,7 @@ foreach ($shirt_sizes as $currSize) {
 
     if (!isZero($dyed_tank_quantity)) {
         $sql .= "INSERT INTO dyed_tank_tops (Quantity, Earn, Location, Date, Size) VALUES ('" . $dyed_tank_quantity . "', '" . $dyed_tank_earn . "', '" . $location . "', '" . $show_date . "', '" . $currSize . "');";
-        $response .= "<br><li>You sold " . $dyed_tank_quantity . " Women's Dyed Shirt(s) for a total of $" . $dyed_tank_earn . ".</li>";
+        $response .= "<br><li>You sold " . $dyed_tank_quantity . " Dyed Tank Top(s) for a total of $" . $dyed_tank_earn . ".</li>";
         $totalEarn += $dyed_tank_earn;
     }
 }
