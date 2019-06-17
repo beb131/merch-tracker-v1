@@ -13,3 +13,7 @@
 </head>
 
 <body>
+	<header>
+		<h1>Merch Tracker V2</h1>
+	</header>
+	<main>

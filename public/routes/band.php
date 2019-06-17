@@ -7,5 +7,5 @@
 //     link to transaction data table
 include '../partials/header.php';
 echo 'Recent Transaction....';
-echo '';
+echo '<a href="transaction-new.php">New transaction</a>';
 include '../partials/footer.php';
