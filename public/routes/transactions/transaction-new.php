@@ -1,7 +1,7 @@
 <?php
 // transaction-new.php
-include '../partials/header.php'; ?>
-<form action="transaction-form-submit.php">
+include '../../partials/header.php'; ?>
+<form action="../../../api/transaction/create.php">
     <?php
     // Merch Type
     ////// T-Shirt
@@ -21,7 +21,10 @@ include '../partials/header.php'; ?>
     ////// OTS
     ////// TNBF
     ?>
-    <label for="merch-type">What Type of Merch Did You Sell?</label>
+    <input type="date" name="date_of_transaction">
+    <input type="text" name="venue_pay">
+    <button>Submit</button>
+    <!-- <label for="merch-type">What Type of Merch Did You Sell?</label>
     <select id="merch-type" name="merch-type" class="custom-select">
         <option value="t-shirt">T-Shirt</option>
         <option value="crop-top">Crop Top</option>
@@ -30,6 +33,6 @@ include '../partials/header.php'; ?>
         <option value="beanie">Beanie</option>
         <option value="cd">CD</option>
         <option value="poster">Poster</option>
-    </select>
+    </select> -->
 </form>
-<?php include '../partials/footer.php';
+<?php include '../../partials/footer.php';
