@@ -1,7 +1,7 @@
 <?php
 // transaction-new.php
 include '../../partials/header.php'; ?>
-<form action="../../../api/transaction/create.php">
+<form action="/projects/php-band-merch-tracker/api/transaction/create.php" method="POST">
     <?php
     // Merch Type
     ////// T-Shirt
@@ -22,8 +22,9 @@ include '../../partials/header.php'; ?>
     ////// TNBF
     ?>
     <input type="date" name="date_of_transaction">
-    <input type="text" name="venue_pay">
-    <button>Submit</button>
+    <input type="text" name="venue_pay" placeholder="Venue Pay">
+    <input type="text" name="total_earn" placeholder="Total Earn">
+    <input type="submit">
     <!-- <label for="merch-type">What Type of Merch Did You Sell?</label>
     <select id="merch-type" name="merch-type" class="custom-select">
         <option value="t-shirt">T-Shirt</option>

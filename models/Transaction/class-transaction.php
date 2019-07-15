@@ -22,11 +22,9 @@ class Transaction
 
     // Sales Table
     public $sales_id;
-    public $transaction_date;
+    public $date_of_sale;
     public $venue_pay;
     public $total_earn;
-
-
 
     // Constructor w/ DB
     public function __construct($db)
@@ -34,6 +32,26 @@ class Transaction
         $this->conn = $db;
     }
 
+
+    /*** 
+     * 
+     * FUNCTION read()
+     * Returns all transactions ordered by transaction_date DESC 
+     * 
+     ***/
+    public function read()
+    {
+        // Create Query
+        $query = 'SELECT * FROM ' . $this->sales_table;
+
+        // Prepare Statement
+        $stmt = $this->conn->prepare($query);
+
+        // Execute Query
+        $stmt->execute();
+
+        return $stmt;
+    }
 
     /*** 
      * 
@@ -47,8 +65,8 @@ class Transaction
         // Query 1
 
         // Calculate total earnings and INSERT INTO sales table, include venue earn, or modify row later with total earnings
-        $sales_query = 'INSERT INTO sales (date_of_sale, venue_pay) 
-                   VALUES (":date_of_sale",":venue_pay");';
+        $sales_query = 'INSERT INTO ' . $this->sales_table . ' (date_of_sale, venue_pay, total_earn) 
+                   VALUES (":date_of_sale",":venue_pay",":total_earn");';
 
         // Prepare Statement
         $stmt = $this->conn->prepare($sales_query);
@@ -56,10 +74,12 @@ class Transaction
         // Sanitize Data
         $this->date_of_sale = htmlspecialchars(strip_tags($this->date_of_sale));
         $this->venue_pay = htmlspecialchars(strip_tags($this->venue_pay));
+        $this->venue_pay = htmlspecialchars(strip_tags($this->total_earn));
 
         // Bind Data
         $stmt->bindParam(':date_of_sale', $this->date_of_sale);
         $stmt->bindParam(':venue_pay', $this->venue_pay);
+        $stmt->bindParam(':total_earn', $this->total_earn);
 
         // Execute Query
         if ($stmt->execute()) {
@@ -88,36 +108,4 @@ class Transaction
         // Insert into products_in_sales by each product ID, use the same sale ID for each product in submitted sale. 
         // Altered prices need to be input as a separate row. 
     }
-
-    /*** 
-     * 
-     * FUNCTION read()
-     * Returns all transactions ordered by transaction_date DESC 
-     * 
-     ***/
-    // public function read()
-    // {
-    //     // Create Query
-    //     $query = 'SELECT 
-    //                 c.name as category_name,
-    //                 p.id,
-    //                 p.category_id,
-    //                 p.title,
-    //                 p.body,
-    //                 p.author,
-    //                 p.created_at
-    //                 FROM ' . $this->table . ' p
-    //                 LEFT JOIN categories c 
-    //                 ON p.category_ID = c.id
-    //                 ORDER BY p.created_at DESC
-    //               ';
-
-    //     // Prepare Statement
-    //     $stmt = $this->conn->prepare($query);
-
-    //     // Execute Query
-    //     $stmt->execute();
-
-    //     return $stmt;
-    // }
 }

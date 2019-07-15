@@ -1,6 +1,15 @@
-RewriteEngine On
-RewriteBase /
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /projects/php-band-merch-tracker
+  RewriteCond %{HTTP_HOST} ^www\.(.*)$ [NC]
+  RewriteRule ^(.*)$ http://%1/$1 [R=301,L]
 
-RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-d
-RewriteRule ^(.*)$ index.php?$1 [L,QSA]
+  RewriteBase /projects/php-band-merch-tracker
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule ^(.*)$ index.php?/$1 [L]
+</IfModule>
+
+<IfModule !mod_rewrite.c>
+  ErrorDocument 404 /index.php
+</IfModule>
