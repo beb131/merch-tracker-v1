@@ -7,7 +7,7 @@ class Database
     private $username = "root";
     private $password = "123456";
     // User with fewer permissions
-    // $username = "schwam_merch_usr"; 
+    // $username = "merch_usr"; 
     // $password = "123456";
     private $conn;
 
